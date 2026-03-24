@@ -3,7 +3,7 @@ public class usecase1 {
     public static void main(String[] args) {
 
         System.out.println("Welcome to BookMyStay Application");
-        System.out.println("Application Started Successfully");
+        System.out.println("Application   Started Successfully");
 
         startApplication(); // calling UC1 method
     }
