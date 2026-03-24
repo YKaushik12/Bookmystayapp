@@ -1,15 +1,47 @@
+// ✅ Abstract Class (Abstraction)
+abstract class Booking {
+    String customerName;
+    int numberOfRooms;
+
+    Booking(String customerName, int numberOfRooms) {
+        this.customerName = customerName;
+        this.numberOfRooms = numberOfRooms;
+    }
+
+    // Abstract method
+    abstract void calculateCost();
+
+    void displayDetails() {
+        System.out.println("Customer: " + customerName);
+        System.out.println("Rooms: " + numberOfRooms);
+    }
+}
+
+// ✅ Child Class (Inheritance)
+class HotelBooking extends Booking {
+    int pricePerRoom = 1000;
+
+    HotelBooking(String customerName, int numberOfRooms) {
+        super(customerName, numberOfRooms);
+    }
+
+    @Override
+    void calculateCost() {
+        int total = numberOfRooms * pricePerRoom;
+        System.out.println("Total Cost: " + total);
+    }
+}
+
+// ✅ Main class (same file)
 public class usecase2 {
 
     public static void main(String[] args) {
 
-        System.out.println("Welcome to BookMyStay Application");
-        System.out.println("Application   Started Successfully");
+        System.out.println("=== UC2: Inheritance & Abstraction ===");
 
-        startApplication(); // calling UC1 method
-    }
+        HotelBooking booking = new HotelBooking("Nikhil", 2);
 
-    // ✅ Use Case 1
-    static void startApplication() {
-        System.out.println("Hotel Booking System is Ready...");
+        booking.displayDetails();
+        booking.calculateCost();
     }
 }
